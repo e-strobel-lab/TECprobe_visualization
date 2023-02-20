@@ -1,0 +1,33 @@
+###########################################################################
+###									###
+###  Variables .txt file for running the compile_sm2_output.py script	###
+###									###
+###########################################################################
+
+
+# Normalization #
+Sets whether the script calculates and applies a normalization factor to the whole dataset. The normalization factor generated from SHAPEmapper2 analysis is different for each transcript length because the TECprobe-ML input data for the SHAPEmapper2 script is separated based on transcript length. Setting this to True calculates a new normalization factor for the whole datasest and creates the columns 'Norm_calc_profile' and 'Norm_stderr' for each transcript length where the raw values have been divided by the calculated normalization factor.
+Default=True
+
+>normalization=
+
+
+# Background mutation rate cutoff #
+Sets the background mutation rate cutoff used to select reactivities for calculating the normalization factor.
+Default=0.05
+
+>bkg_mut=
+
+
+# Modified effective read depth cutoff #
+Sets the modified effective read depth cutoff used to select reactivities for calculating the normalization factor.
+Default=5000
+
+>mod_eff_depth=
+
+
+# DNA template reverse primer sequence #
+Sets the 3' end of RNA sequence that is complementary to the DNA template reverse primer. This is used to remove certain transcript lengths that are not enriched, due to the reverse primer lacking internal biotinylation, from calculation of the normalization factor. This should be written as the RNA sequence 5' to 3'. The default sequence for our experiment is the HP4 sequence.
+Default=UGAUUCGUCAGGCGAUGUGUGCUGGAAGACAUU
+
+>rev_primer=
